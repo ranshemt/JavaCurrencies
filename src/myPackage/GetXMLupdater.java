@@ -1,0 +1,100 @@
+package myPackage;
+//
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.io.InputStream;
+import javax.net.ssl.HttpsURLConnection;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import java.util.concurrent.TimeUnit;
+//logger from App class
+import static myPackage.App.MyLogger;
+/**
+ * GetXMLupdater gets the data from Israel"s Bank API (in XML format)
+ * saves it to local file
+*/
+public class GetXMLupdater implements Runnable{
+    private String FN;
+    private int calls;
+    //
+    public GetXMLupdater(String fn){
+        calls = 0;
+        FN = fn;
+        if(saveFile() == 0){
+            System.out.println(this.getClass().getName() + " first download failed");
+        }
+        System.out.println(this.getClass().getName() + " with FileName:"+ fn +" object was created");
+    }
+    //
+    private int saveFile(){
+        System.out.println("starting saveFile()");
+        //connection vars
+        InputStream inpStream = null;
+        HttpsURLConnection connection = null;
+        //
+        try{
+            //
+            URL bankAPI_URL = new URL("https://www.boi.org.il/currency.xml");
+            connection = (HttpsURLConnection) bankAPI_URL.openConnection();
+            connection.setRequestMethod("GET");
+            connection.connect();
+            //
+            inpStream = connection.getInputStream();
+            //
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document doc = builder.parse(inpStream);
+            doc.getDocumentElement().normalize();
+            //
+            TransformerFactory tFactory = TransformerFactory.newInstance();
+            Transformer transformer = tFactory.newTransformer();
+            //
+            File currencies = new File("Currencies.xml");
+        }
+        catch(SAXException | ParserConfigurationException | IOException | TransformerException e){
+            e.printStackTrace();
+            System.out.println("GetXMLupdater failed to get new data in call number " + this.calls);
+            return 0;
+        }
+        finally {
+            if(inpStream != null){
+                try {
+                    inpStream.close();
+                }
+                catch(IOException e){
+                    e.printStackTrace();
+                    return 0;
+                }
+            }
+            if(connection != null){
+                connection.disconnect();
+                return 1;
+            }
+        }
+        return 1;
+    }
+    //
+    public void run(){
+        while(true){
+            try{
+                if(saveFile() == 0){
+                    System.out.println("GetXMLupdater.run() failed with call number " + this.calls);
+                }
+                this.calls++;
+                TimeUnit.HOURS.sleep(1);
+            }
+            catch (InterruptedException e){
+                System.out.println("GetXMLupdater.run() failed because of TimeUnit exception");
+                e.printStackTrace();
+            }
+        }
+    }
+}
