@@ -11,11 +11,11 @@ public class Currency {
     public Currency(String name, String code, String country, int unit, double rate, double change){
         boolean useDefault = false;
         if((name == null || name.isEmpty()) || (code == null || code.isEmpty()) || (country == null || country.isEmpty())){
-            System.out.println("error creating new Currency, invalid String data received");
+            MyLogger.error("error creating new Currency, invalid String data received");
             useDefault = true;
         }
         if(unit <= 0 || rate <= 0){
-            System.out.println("error creating new Currency, invalid int/double data received");
+            MyLogger.error("error creating new Currency, invalid int/double data received");
             useDefault = true;
         }
         if(useDefault == false){
@@ -33,7 +33,7 @@ public class Currency {
             this.__RATE = 0;
             this.__CHANGE = 100;
         }
-        System.out.println(name + " Currency created");
+        MyLogger.info(name + " Currency created");
     }
     //
     //getters- method name matches XML tag name
@@ -58,14 +58,23 @@ public class Currency {
     //
     //
     public String toString(){
-        String str = "<CURRENCY>";
-        str += "   <NAME>\t\t\t" + this.__NAME + "\t\t</NAME>";
-        str += "   <UNIT>\t\t\t" + this.__UNIT + "\t\t</UNIT>";
-        str += "   <CURRENCYCODE>" + this.__CURRENCYCODE + "\t\t</CURRENCYCODE>";
-        str += "   <COUNTRY>\t\t" + this.__COUNTRY + "\t\t</COUNTRY>";
-        str += "   <RATE>\t\t\t" + this.__RATE + "\t\t</RATE>";
-        str += "   <CHANGE>\t\t" + this.__CHANGE + "\t\t</CHANGE>";
-        str += "\n</CURRENCY>";
+        String str = "Currency Name: " + this.__NAME;
+        str += "\tUnit: " + this.__UNIT;
+        str += "\tCode: " + this.__CURRENCYCODE;
+        str += "\tCountry: " + this.__COUNTRY;
+        str += "\tRate: " + this.__RATE;
+        str += "\tChange: " + this.__CHANGE + "\n";
         return str;
     }
+    // public String toString(){
+    //     String str = "<CURRENCY>\n";
+    //     str += "   <NAME>\t\t\t" + this.__NAME + "\t\t</NAME>\n";
+    //     str += "   <UNIT>\t\t\t" + this.__UNIT + "\t\t\t</UNIT>\n";
+    //     str += "   <CURRENCYCODE>\t" + this.__CURRENCYCODE + "\t\t\t</CURRENCYCODE>\n";
+    //     str += "   <COUNTRY>\t\t" + this.__COUNTRY + "\t\t</COUNTRY>\n";
+    //     str += "   <RATE>\t\t\t" + this.__RATE + "\t\t</RATE>\n";
+    //     str += "   <CHANGE>\t\t\t" + this.__CHANGE + "\t\t</CHANGE>\n";
+    //     str += "\n</CURRENCY>";
+    //     return str;
+    // }
 }

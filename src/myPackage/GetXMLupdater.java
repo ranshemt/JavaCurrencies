@@ -14,6 +14,8 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.util.concurrent.TimeUnit;
 //logger from App class
 import static myPackage.App.MyLogger;
@@ -29,13 +31,12 @@ public class GetXMLupdater implements Runnable{
         calls = 0;
         FN = fn;
         if(saveFile() == 0){
-            System.out.println(this.getClass().getName() + " first download failed");
+            MyLogger.error(this.getClass().getName() + " first download failed");
         }
-        System.out.println(this.getClass().getName() + " with FileName:"+ fn +" object was created");
+        MyLogger.info(this.getClass().getName() + " with FileName:"+ fn +" object was created");
     }
     //
     private int saveFile(){
-        System.out.println("starting saveFile()");
         //connection vars
         InputStream inpStream = null;
         HttpsURLConnection connection = null;
@@ -58,10 +59,11 @@ public class GetXMLupdater implements Runnable{
             Transformer transformer = tFactory.newTransformer();
             //
             File currencies = new File("Currencies.xml");
+            transformer.transform(new DOMSource(doc), new StreamResult(currencies));
         }
         catch(SAXException | ParserConfigurationException | IOException | TransformerException e){
             e.printStackTrace();
-            System.out.println("GetXMLupdater failed to get new data in call number " + this.calls);
+            MyLogger.info("GetXMLupdater failed to get new data in call number " + this.calls);
             return 0;
         }
         finally {
@@ -71,6 +73,8 @@ public class GetXMLupdater implements Runnable{
                 }
                 catch(IOException e){
                     e.printStackTrace();
+                    MyLogger.error("GetXMLupdater function saveFile() error:");
+                    MyLogger.error(e);
                     return 0;
                 }
             }
@@ -86,13 +90,14 @@ public class GetXMLupdater implements Runnable{
         while(true){
             try{
                 if(saveFile() == 0){
-                    System.out.println("GetXMLupdater.run() failed with call number " + this.calls);
+                    MyLogger.info("GetXMLupdater function saveFile failed with call number " + this.calls);
                 }
                 this.calls++;
                 TimeUnit.HOURS.sleep(1);
             }
             catch (InterruptedException e){
-                System.out.println("GetXMLupdater.run() failed because of TimeUnit exception");
+                MyLogger.error("GetXMLupdater function saveFile() error:");
+                MyLogger.error(e);
                 e.printStackTrace();
             }
         }

@@ -20,11 +20,12 @@ public class XMLtoList{
     //
     //constructor
     public XMLtoList(){
+        this.CurrenciesList = new Currency[14];
         if(XMLtoArr() == 0){
-            System.out.println(this.getClass().getName() + " object creation FAILED");    
+            MyLogger.error(this.getClass().getName() + " object creation FAILED");    
         }
         else{
-            System.out.println(this.getClass().getName() + " object was created");
+            MyLogger.info(this.getClass().getName() + " object was created");
         }
     }
     //
@@ -38,10 +39,9 @@ public class XMLtoList{
             Document doc = builder.parse(rawFile);
             doc.getDocumentElement().normalize();
             this.rawList = doc.getElementsByTagName("CURRENCY");
-            System.out.println("rawList length = " + this.rawList.getLength());
         }
         catch(Exception e){
-            System.out.println("caught error in XMLtoRAW: " + e);
+            MyLogger.error("caught error in XMLtoRAW: " + e);
             return 0;
         }
         return 1;
@@ -52,8 +52,18 @@ public class XMLtoList{
         if(XMLtoRAW() == 0){
             return 0;
         }
-        else {
-            return 1;
+        for(int i = 0; i < this.rawList.getLength(); i++){
+            String name        =                    this.rawList.item(i).getChildNodes().item(1 ).getTextContent( );
+            int    unit        = Integer.parseInt  (this.rawList.item(i).getChildNodes().item(3 ).getTextContent());
+            String code        =                    this.rawList.item(i).getChildNodes().item(5 ).getTextContent( );
+            String country =                    this.rawList.item(i).getChildNodes().item(7 ).getTextContent( );
+            double rate        = Double.parseDouble(this.rawList.item(i).getChildNodes().item(9 ).getTextContent());
+            double change      = Double.parseDouble(this.rawList.item(i).getChildNodes().item(11).getTextContent());
+            this.CurrenciesList[i] = new Currency(name, code, country, unit, rate, change);
+            MyLogger.info("new item in CurrenciesList:");
+            MyLogger.info(this.CurrenciesList[i]);
         }
+        MyLogger.info("XMLtoArr finished with " +this.CurrenciesList.length+ " items");
+        return 1;
     }
 }
