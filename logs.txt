@@ -1,61 +1,62 @@
 INFO  [main]: myPackage.GetXMLupdater with FileName:Currencies.xml object was created
+INFO  [main]: LAST_UPDATE: 2019-02-27
 INFO  [main]: Dollar Currency created
 INFO  [main]: new item in CurrenciesList:
-INFO  [main]: Currency Name: Dollar		Unit: 1		Code: USD		Country: USA		Rate: 3.619		Change: -0.138
+INFO  [main]: Currency Name: Dollar	Unit: 1	Code: USD	Country: USA	Rate: 3.619	Change: -0.138
 
 INFO  [main]: Pound Currency created
 INFO  [main]: new item in CurrenciesList:
-INFO  [main]: Currency Name: Pound		Unit: 1		Code: GBP		Country: Great Britain		Rate: 4.816		Change: 0.635
+INFO  [main]: Currency Name: Pound	Unit: 1	Code: GBP	Country: Great Britain	Rate: 4.816	Change: 0.635
 
 INFO  [main]: Yen Currency created
 INFO  [main]: new item in CurrenciesList:
-INFO  [main]: Currency Name: Yen		Unit: 100		Code: JPY		Country: Japan		Rate: 3.2767		Change: 0.254
+INFO  [main]: Currency Name: Yen	Unit: 100	Code: JPY	Country: Japan	Rate: 3.2767	Change: 0.254
 
 INFO  [main]: Euro Currency created
 INFO  [main]: new item in CurrenciesList:
-INFO  [main]: Currency Name: Euro		Unit: 1		Code: EUR		Country: EMU		Rate: 4.1263		Change: 0.199
+INFO  [main]: Currency Name: Euro	Unit: 1	Code: EUR	Country: EMU	Rate: 4.1263	Change: 0.199
 
 INFO  [main]: Dollar Currency created
 INFO  [main]: new item in CurrenciesList:
-INFO  [main]: Currency Name: Dollar		Unit: 1		Code: AUD		Country: Australia		Rate: 2.5938		Change: 0.158
+INFO  [main]: Currency Name: Dollar	Unit: 1	Code: AUD	Country: Australia	Rate: 2.5938	Change: 0.158
 
 INFO  [main]: Dollar Currency created
 INFO  [main]: new item in CurrenciesList:
-INFO  [main]: Currency Name: Dollar		Unit: 1		Code: CAD		Country: Canada		Rate: 2.7549		Change: 0.47
+INFO  [main]: Currency Name: Dollar	Unit: 1	Code: CAD	Country: Canada	Rate: 2.7549	Change: 0.47
 
 INFO  [main]: krone Currency created
 INFO  [main]: new item in CurrenciesList:
-INFO  [main]: Currency Name: krone		Unit: 1		Code: DKK		Country: Denmark		Rate: 0.553		Change: 0.217
+INFO  [main]: Currency Name: krone	Unit: 1	Code: DKK	Country: Denmark	Rate: 0.553	Change: 0.217
 
 INFO  [main]: Krone Currency created
 INFO  [main]: new item in CurrenciesList:
-INFO  [main]: Currency Name: Krone		Unit: 1		Code: NOK		Country: Norway		Rate: 0.4243		Change: 0.808
+INFO  [main]: Currency Name: Krone	Unit: 1	Code: NOK	Country: Norway	Rate: 0.4243	Change: 0.808
 
 INFO  [main]: Rand Currency created
 INFO  [main]: new item in CurrenciesList:
-INFO  [main]: Currency Name: Rand		Unit: 1		Code: ZAR		Country: South Africa		Rate: 0.261		Change: -0.038
+INFO  [main]: Currency Name: Rand	Unit: 1	Code: ZAR	Country: South Africa	Rate: 0.261	Change: -0.038
 
 INFO  [main]: Krona Currency created
 INFO  [main]: new item in CurrenciesList:
-INFO  [main]: Currency Name: Krona		Unit: 1		Code: SEK		Country: Sweden		Rate: 0.3909		Change: 0.54
+INFO  [main]: Currency Name: Krona	Unit: 1	Code: SEK	Country: Sweden	Rate: 0.3909	Change: 0.54
 
 INFO  [main]: Franc Currency created
 INFO  [main]: new item in CurrenciesList:
-INFO  [main]: Currency Name: Franc		Unit: 1		Code: CHF		Country: Switzerland		Rate: 3.6317		Change: 0.287
+INFO  [main]: Currency Name: Franc	Unit: 1	Code: CHF	Country: Switzerland	Rate: 3.6317	Change: 0.287
 
 INFO  [main]: Dinar Currency created
 INFO  [main]: new item in CurrenciesList:
-INFO  [main]: Currency Name: Dinar		Unit: 1		Code: JOD		Country: Jordan		Rate: 5.1052		Change: -0.137
+INFO  [main]: Currency Name: Dinar	Unit: 1	Code: JOD	Country: Jordan	Rate: 5.1052	Change: -0.137
 
 INFO  [main]: Pound Currency created
 INFO  [main]: new item in CurrenciesList:
-INFO  [main]: Currency Name: Pound		Unit: 10		Code: LBP		Country: Lebanon		Rate: 0.024		Change: 0.0
+INFO  [main]: Currency Name: Pound	Unit: 10	Code: LBP	Country: Lebanon	Rate: 0.024	Change: 0.0
 
 INFO  [main]: Pound Currency created
 INFO  [main]: new item in CurrenciesList:
-INFO  [main]: Currency Name: Pound		Unit: 1		Code: EGP		Country: Egypt		Rate: 0.2065		Change: -0.048
+INFO  [main]: Currency Name: Pound	Unit: 1	Code: EGP	Country: Egypt	Rate: 0.2065	Change: -0.048
 
 INFO  [main]: XMLtoArr finished with 14 items
 INFO  [main]: myPackage.XMLtoList object was created
+INFO  [main]: myPackage.CurrenciesGUI Created
 INFO  [main]: myPackage.App object was created
-INFO  [main]: App tryPrint() received: some value App will print

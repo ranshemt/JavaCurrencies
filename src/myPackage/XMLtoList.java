@@ -17,6 +17,7 @@ import static myPackage.App.MyLogger;
 public class XMLtoList{
     private NodeList rawList;
     private Currency[] CurrenciesList;
+    private String lastUpdate;
     //
     //constructor
     public XMLtoList(){
@@ -38,6 +39,8 @@ public class XMLtoList{
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(rawFile);
             doc.getDocumentElement().normalize();
+            lastUpdate = doc.getElementsByTagName("LAST_UPDATE").item(0).getFirstChild().getNodeValue();
+            MyLogger.info("LAST_UPDATE: " + lastUpdate);
             this.rawList = doc.getElementsByTagName("CURRENCY");
         }
         catch(Exception e){
@@ -65,5 +68,13 @@ public class XMLtoList{
         }
         MyLogger.info("XMLtoArr finished with " +this.CurrenciesList.length+ " items");
         return 1;
+    }
+    //
+    //
+    public Currency[] g_CurrenciesList(){
+        return this.CurrenciesList;
+    }
+    public String g_lastUpdate(){
+        return this.lastUpdate;
     }
 }

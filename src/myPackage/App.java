@@ -3,9 +3,10 @@ package myPackage;
 import org.apache.log4j.FileAppender;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
-
+import javax.swing.*;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.InvocationTargetException;
 
 //
 public class App {
@@ -25,6 +26,7 @@ public class App {
         }
     }
     //private gui
+    private CurrenciesGUI myGUI = null;
     //calculator
     private XMLtoList myList = null;
     private GetXMLupdater myUpdater = null;
@@ -36,10 +38,30 @@ public class App {
         //create list from local file
         myList = new XMLtoList();
         //
+        myGUI = new CurrenciesGUI();
+        //
         MyLogger.info(this.getClass().getName() + " object was created");
     }
-    public static void tryPrint(String val){
-        System.out.println("App tryPrint() received: " + val);
-        MyLogger.info("App tryPrint() received: " + val);
+    //
+    public void runGUI(){
+        myGUI.createUI();
+        myGUI.updateDate(myList.g_lastUpdate());
+        myGUI.updateCurrencies(myList.g_CurrenciesList());
+        
+        try{
+            SwingUtilities.invokeAndWait(myUpdater);
+        }
+        catch (InterruptedException | InvocationTargetException e) {
+            System.out.println("error in runGUI(): " + e);
+            MyLogger.info("error in runGUI(): " + e);
+            e.printStackTrace();
+        }
+    }
+    //
+    public void printData(){
+        System.out.println("Last Update: " + myList.g_lastUpdate());
+        for(int i = 0; i < myList.g_CurrenciesList().length; i++){
+            System.out.println(myList.g_CurrenciesList()[i]);
+        }
     }
 }
