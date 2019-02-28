@@ -33,7 +33,7 @@ public class GetXMLupdater implements Runnable{
         if(saveFile() == 0){
             MyLogger.error(this.getClass().getName() + " first download failed");
         }
-        MyLogger.info(this.getClass().getName() + " with FileName:"+ fn +" object was created");
+        MyLogger.info(this.getClass().getName() + " with FileName: "+ fn +" object was created");
     }
     //
     private int saveFile(){
@@ -42,6 +42,7 @@ public class GetXMLupdater implements Runnable{
         HttpsURLConnection connection = null;
         //
         try{
+            MyLogger.info("svaeFile() API call starting");
             //
             URL bankAPI_URL = new URL("https://www.boi.org.il/currency.xml");
             connection = (HttpsURLConnection) bankAPI_URL.openConnection();

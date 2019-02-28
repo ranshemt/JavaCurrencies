@@ -63,7 +63,6 @@ public class XMLtoList{
             double rate        = Double.parseDouble(this.rawList.item(i).getChildNodes().item(9 ).getTextContent());
             double change      = Double.parseDouble(this.rawList.item(i).getChildNodes().item(11).getTextContent());
             this.CurrenciesList[i] = new Currency(name, code, country, unit, rate, change);
-            MyLogger.info("new item in CurrenciesList:");
             MyLogger.info(this.CurrenciesList[i]);
         }
         MyLogger.info("XMLtoArr finished with " +this.CurrenciesList.length+ " items");

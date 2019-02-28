@@ -24,6 +24,7 @@ public class CurrenciesGUI {
     private JPanel topPanel, botPanel;
     //drop down menu
     private JComboBox<String> from, to;
+    //inputs
     private JTextField amount, result;
     //lables
     private JLabel fromL, toL, resultL, date, amountL, title;
@@ -174,6 +175,7 @@ public class CurrenciesGUI {
             @Override
             public void windowClosing(WindowEvent e) {
                 super.windowClosing(e);
+                System.out.println("will close window");
                 System.exit(1);
             }
         });

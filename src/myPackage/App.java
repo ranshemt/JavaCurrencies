@@ -34,7 +34,6 @@ public class App {
     //
     public App(){
         //get file from API and save it locally
-        myUpdater = new GetXMLupdater("Currencies.xml");
         //create list from local file
         myList = new XMLtoList();
         //
@@ -46,12 +45,15 @@ public class App {
     public void runGUI(){
         myGUI.createUI();
         myGUI.updateDate(myList.g_lastUpdate());
-        myGUI.updateCurrencies(myList.g_CurrenciesList());
-        
+        //myGUI.updateCurrencies(myList.g_CurrenciesList());
+        //
+        Runnable myRunnable = () -> new GetXMLupdater("Currencies.xml");
+        //
         try{
-            SwingUtilities.invokeAndWait(myUpdater);
+            SwingUtilities.invokeAndWait(myRunnable);
+            myGUI.updateCurrencies(myList.g_CurrenciesList());
         }
-        catch (InterruptedException | InvocationTargetException e) {
+        catch (Exception e) {
             System.out.println("error in runGUI(): " + e);
             MyLogger.info("error in runGUI(): " + e);
             e.printStackTrace();
@@ -63,5 +65,9 @@ public class App {
         for(int i = 0; i < myList.g_CurrenciesList().length; i++){
             System.out.println(myList.g_CurrenciesList()[i]);
         }
+    }
+    //
+    public void printSelected(){
+        
     }
 }
