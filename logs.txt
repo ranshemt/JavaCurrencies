@@ -1,7 +1,121 @@
-ERROR [main]: caught error in XMLtoRAW: java.io.FileNotFoundException: D:\OneDriveD\OneDrive\1Soft.Eng - Shenkar\3 Year\Java\0Currencies\Currencies.xml (The system cannot find the file specified)
-ERROR [main]: myPackage.XMLtoList object creation FAILED
+INFO  [main]: LAST_UPDATE: 2019-02-28
+INFO  [main]: Dollar Currency created
+INFO  [main]: Currency Name: Dollar	Unit: 1	Code: USD	Country: USA	Rate: 3.604	Change: -0.414
+
+INFO  [main]: Pound Currency created
+INFO  [main]: Currency Name: Pound	Unit: 1	Code: GBP	Country: Great Britain	Rate: 4.7978	Change: -0.378
+
+INFO  [main]: Yen Currency created
+INFO  [main]: Currency Name: Yen	Unit: 100	Code: JPY	Country: Japan	Rate: 3.2538	Change: -0.699
+
+INFO  [main]: Euro Currency created
+INFO  [main]: Currency Name: Euro	Unit: 1	Code: EUR	Country: EMU	Rate: 4.1142	Change: -0.293
+
+INFO  [main]: Dollar Currency created
+INFO  [main]: Currency Name: Dollar	Unit: 1	Code: AUD	Country: Australia	Rate: 2.5733	Change: -0.79
+
+INFO  [main]: Dollar Currency created
+INFO  [main]: Currency Name: Dollar	Unit: 1	Code: CAD	Country: Canada	Rate: 2.7364	Change: -0.672
+
+INFO  [main]: krone Currency created
+INFO  [main]: Currency Name: krone	Unit: 1	Code: DKK	Country: Denmark	Rate: 0.5514	Change: -0.289
+
+INFO  [main]: Krone Currency created
+INFO  [main]: Currency Name: Krone	Unit: 1	Code: NOK	Country: Norway	Rate: 0.4228	Change: -0.354
+
+INFO  [main]: Rand Currency created
+INFO  [main]: Currency Name: Rand	Unit: 1	Code: ZAR	Country: South Africa	Rate: 0.2583	Change: -1.034
+
+INFO  [main]: Krona Currency created
+INFO  [main]: Currency Name: Krona	Unit: 1	Code: SEK	Country: Sweden	Rate: 0.3925	Change: 0.409
+
+INFO  [main]: Franc Currency created
+INFO  [main]: Currency Name: Franc	Unit: 1	Code: CHF	Country: Switzerland	Rate: 3.6261	Change: -0.154
+
+INFO  [main]: Dinar Currency created
+INFO  [main]: Currency Name: Dinar	Unit: 1	Code: JOD	Country: Jordan	Rate: 5.0841	Change: -0.413
+
+INFO  [main]: Pound Currency created
+INFO  [main]: Currency Name: Pound	Unit: 10	Code: LBP	Country: Lebanon	Rate: 0.0239	Change: -0.417
+
+INFO  [main]: Pound Currency created
+INFO  [main]: Currency Name: Pound	Unit: 1	Code: EGP	Country: Egypt	Rate: 0.2053	Change: -0.581
+
+INFO  [main]: XMLtoArr finished with 14 items
+INFO  [main]: myPackage.XMLtoList object was created
 INFO  [main]: myPackage.CurrenciesGUI Created
 INFO  [main]: myPackage.App object was created
 INFO  [AWT-EventQueue-0]: svaeFile() API call starting
 INFO  [AWT-EventQueue-0]: myPackage.GetXMLupdater with FileName: Currencies.xml object was created
-INFO  [main]: error in runGUI(): java.lang.NullPointerException
+ERROR [AWT-EventQueue-0]: no amount input, set to 0
+INFO  [main]: LAST_UPDATE: 2019-02-28
+INFO  [main]: Dollar Currency created
+INFO  [main]: Currency Name: Dollar	Unit: 1	Code: USD	Country: USA	Rate: 3.604	Change: -0.414
+
+INFO  [main]: Pound Currency created
+INFO  [main]: Currency Name: Pound	Unit: 1	Code: GBP	Country: Great Britain	Rate: 4.7978	Change: -0.378
+
+INFO  [main]: Yen Currency created
+INFO  [main]: Currency Name: Yen	Unit: 100	Code: JPY	Country: Japan	Rate: 3.2538	Change: -0.699
+
+INFO  [main]: Euro Currency created
+INFO  [main]: Currency Name: Euro	Unit: 1	Code: EUR	Country: EMU	Rate: 4.1142	Change: -0.293
+
+INFO  [main]: Dollar Currency created
+INFO  [main]: Currency Name: Dollar	Unit: 1	Code: AUD	Country: Australia	Rate: 2.5733	Change: -0.79
+
+INFO  [main]: Dollar Currency created
+INFO  [main]: Currency Name: Dollar	Unit: 1	Code: CAD	Country: Canada	Rate: 2.7364	Change: -0.672
+
+INFO  [main]: krone Currency created
+INFO  [main]: Currency Name: krone	Unit: 1	Code: DKK	Country: Denmark	Rate: 0.5514	Change: -0.289
+
+INFO  [main]: Krone Currency created
+INFO  [main]: Currency Name: Krone	Unit: 1	Code: NOK	Country: Norway	Rate: 0.4228	Change: -0.354
+
+INFO  [main]: Rand Currency created
+INFO  [main]: Currency Name: Rand	Unit: 1	Code: ZAR	Country: South Africa	Rate: 0.2583	Change: -1.034
+
+INFO  [main]: Krona Currency created
+INFO  [main]: Currency Name: Krona	Unit: 1	Code: SEK	Country: Sweden	Rate: 0.3925	Change: 0.409
+
+INFO  [main]: Franc Currency created
+INFO  [main]: Currency Name: Franc	Unit: 1	Code: CHF	Country: Switzerland	Rate: 3.6261	Change: -0.154
+
+INFO  [main]: Dinar Currency created
+INFO  [main]: Currency Name: Dinar	Unit: 1	Code: JOD	Country: Jordan	Rate: 5.0841	Change: -0.413
+
+INFO  [main]: Pound Currency created
+INFO  [main]: Currency Name: Pound	Unit: 10	Code: LBP	Country: Lebanon	Rate: 0.0239	Change: -0.417
+
+INFO  [main]: Pound Currency created
+INFO  [main]: Currency Name: Pound	Unit: 1	Code: EGP	Country: Egypt	Rate: 0.2053	Change: -0.581
+
+INFO  [main]: XMLtoArr finished with 14 items
+ERROR [AWT-EventQueue-0]: no amount input, set to 0
+INFO  [AWT-EventQueue-0]: From: Currency Name: New Israeli Shekel	Unit: 1	Code: NIS	Country: Israel	Rate: 1.0	Change: 0.0
+
+INFO  [AWT-EventQueue-0]: To: Currency Name: New Israeli Shekel	Unit: 1	Code: NIS	Country: Israel	Rate: 1.0	Change: 0.0
+
+INFO  [AWT-EventQueue-0]: Amount: 0.0 RESULT = 0.00
+ERROR [AWT-EventQueue-0]: no amount input, set to 0
+INFO  [AWT-EventQueue-0]: From: Currency Name: New Israeli Shekel	Unit: 1	Code: NIS	Country: Israel	Rate: 1.0	Change: 0.0
+
+INFO  [AWT-EventQueue-0]: To: Currency Name: New Israeli Shekel	Unit: 1	Code: NIS	Country: Israel	Rate: 1.0	Change: 0.0
+
+INFO  [AWT-EventQueue-0]: Amount: 0.0 RESULT = 0.00
+INFO  [AWT-EventQueue-0]: From: Currency Name: New Israeli Shekel	Unit: 1	Code: NIS	Country: Israel	Rate: 1.0	Change: 0.0
+
+INFO  [AWT-EventQueue-0]: To: Currency Name: New Israeli Shekel	Unit: 1	Code: NIS	Country: Israel	Rate: 1.0	Change: 0.0
+
+INFO  [AWT-EventQueue-0]: Amount: 40.0 RESULT = 40.00
+INFO  [AWT-EventQueue-0]: From: Currency Name: Euro	Unit: 1	Code: EUR	Country: EMU	Rate: 4.1142	Change: -0.293
+
+INFO  [AWT-EventQueue-0]: To: Currency Name: New Israeli Shekel	Unit: 1	Code: NIS	Country: Israel	Rate: 1.0	Change: 0.0
+
+INFO  [AWT-EventQueue-0]: Amount: 40.0 RESULT = 164.57
+INFO  [AWT-EventQueue-0]: From: Currency Name: New Israeli Shekel	Unit: 1	Code: NIS	Country: Israel	Rate: 1.0	Change: 0.0
+
+INFO  [AWT-EventQueue-0]: To: Currency Name: Dollar	Unit: 1	Code: USD	Country: USA	Rate: 3.604	Change: -0.414
+
+INFO  [AWT-EventQueue-0]: Amount: 40.0 RESULT = 11.10

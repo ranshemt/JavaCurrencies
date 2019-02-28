@@ -35,6 +35,30 @@ public class Currency {
         }
         MyLogger.info(name + " Currency created");
     }
+    public Currency(){
+        this.__NAME = "Error Currency";
+        this.__CURRENCYCODE = "ERR";
+        this.__COUNTRY = "Error Land";
+        this.__UNIT = 0;
+        this.__RATE = 0;
+        this.__CHANGE = 100;
+    }
+    public Currency(Currency c){
+        this.__NAME = c.__NAME;
+        this.__CURRENCYCODE = c.__CURRENCYCODE;
+        this.__COUNTRY = c.__COUNTRY;
+        this.__UNIT = c.__UNIT;
+        this.__RATE = c.__RATE;
+        this.__CHANGE = c.__CHANGE;
+    }
+    public Currency(String s){
+        this.__NAME = "New Israeli Shekel";
+        this.__CURRENCYCODE = "NIS";
+        this.__COUNTRY = "Israel";
+        this.__UNIT = 1;
+        this.__RATE = 1;
+        this.__CHANGE = 0;
+    }
     //
     //getters- method name matches XML tag name
     public String NAME(){

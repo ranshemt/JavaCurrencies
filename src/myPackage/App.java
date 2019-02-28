@@ -51,6 +51,7 @@ public class App {
         //
         try{
             SwingUtilities.invokeAndWait(myRunnable);
+            myList.XMLtoArr();
             myGUI.updateCurrencies(myList.g_CurrenciesList());
         }
         catch (Exception e) {
@@ -65,9 +66,5 @@ public class App {
         for(int i = 0; i < myList.g_CurrenciesList().length; i++){
             System.out.println(myList.g_CurrenciesList()[i]);
         }
-    }
-    //
-    public void printSelected(){
-        
     }
 }

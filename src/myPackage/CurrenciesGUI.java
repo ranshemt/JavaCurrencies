@@ -3,11 +3,11 @@ package myPackage;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 import java.util.List;
 
 import static myPackage.App.MyLogger;
+import myPackage.XMLtoList;
 
 /**
  * The client GUI
@@ -171,12 +171,60 @@ public class CurrenciesGUI {
         frame.setVisible(true);
         //
         //adding events listeners
+        to.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                System.out.println("To: " + getFrom().getSelectedItem());
+            }
+        });
+        from.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                System.out.println("From: " + e.getItem());
+            }
+        });
+        //
         frame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
                 super.windowClosing(e);
                 System.out.println("will close window");
                 System.exit(1);
+            }
+        });
+        //
+        convert.addActionListener(new ActionListener() {
+            double amountInput, result, firstConversion, secondConversion;
+            String fromCode, toCode, resultSrtring;
+            Currency fromCurrency, toCurrency;
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //amount
+                try{
+                    amountInput = Double.parseDouble(getAmount().getText());
+                }
+                catch (Exception e1){
+                    amountInput = 0;
+                    MyLogger.error("no amount input, set to 0");
+                }
+                //from to
+                fromCode = (String)getFrom().getSelectedItem();
+                fromCurrency = XMLtoList.getCurrencyByCode(fromCode);
+                toCode = (String)getTo().getSelectedItem();
+                toCurrency = XMLtoList.getCurrencyByCode(toCode);
+                //conversions
+                firstConversion = fromCurrency.RATE() * amountInput / fromCurrency.UNIT();
+                secondConversion = toCurrency.RATE() / toCurrency.UNIT();
+                //result
+                result = firstConversion / secondConversion;
+                //
+                //set the result
+                resultSrtring = String.format("%.2f", result);
+                getResult().setText("");
+                getResult().setText(resultSrtring);
+                MyLogger.info("From: " + fromCurrency);
+                MyLogger.info("To: " + toCurrency);
+                MyLogger.info("Amount: " + amountInput + " RESULT = " + resultSrtring);
             }
         });
     }

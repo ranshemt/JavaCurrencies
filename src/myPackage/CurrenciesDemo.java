@@ -11,7 +11,6 @@ public class CurrenciesDemo {
         //myApp.printData();
         System.out.println("will run GUI");
         myApp.runGUI();
-
         //
         System.out.println("\n\n\nThank You!\n");
     }

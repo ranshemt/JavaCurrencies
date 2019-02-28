@@ -16,14 +16,14 @@ import static myPackage.App.MyLogger;
 */
 public class XMLtoList{
     private NodeList rawList;
-    private Currency[] CurrenciesList;
+    private static Currency[] CurrenciesList;
     private String lastUpdate;
     //
     //constructor
     public XMLtoList(){
         this.CurrenciesList = new Currency[14];
         if(XMLtoArr() == 0){
-            MyLogger.error(this.getClass().getName() + " object creation FAILED");    
+            MyLogger.error(this.getClass().getName() + " object was created without initialized data");
         }
         else{
             MyLogger.info(this.getClass().getName() + " object was created");
@@ -51,7 +51,7 @@ public class XMLtoList{
     }
     //
     //XMLtoArr
-    private int XMLtoArr(){
+    public int XMLtoArr(){
         if(XMLtoRAW() == 0){
             return 0;
         }
@@ -75,5 +75,19 @@ public class XMLtoList{
     }
     public String g_lastUpdate(){
         return this.lastUpdate;
+    }
+    //
+    //
+    public static Currency getCurrencyByCode(String c){
+        Currency matchingCurrency = new Currency();
+        if(c.equals("NIS")){
+            matchingCurrency = new Currency("NIS");
+            return matchingCurrency;
+        }
+        for(Currency currCurrency: CurrenciesList){
+            if(currCurrency.CURRENCYCODE().equals(c))
+                matchingCurrency = new Currency(currCurrency);
+        }
+        return matchingCurrency;
     }
 }
